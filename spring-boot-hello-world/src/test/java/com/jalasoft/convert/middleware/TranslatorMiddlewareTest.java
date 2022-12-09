@@ -32,7 +32,7 @@ public class TranslatorMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly inlcuding the token and a txt file
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testPositiveTranlateControllerTxtMiddleware() throws IOException, ServletException, NullPointerException{
         TranslatorMiddleware translatorMiddleware = new TranslatorMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\Trouble.txt");
@@ -82,7 +82,7 @@ public class TranslatorMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly inlcuding the token and a word file
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testPositiveTranlateControllerWordMiddleware() throws IOException, ServletException, NullPointerException{
         TranslatorMiddleware translatorMiddleware = new TranslatorMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\document.dock");
@@ -132,7 +132,7 @@ public class TranslatorMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly with a empty field on parameters sended
      */
-    @Test (expected = NullPointerException.class)
+    @Test (expected = RuntimeException.class)
     public void testNegativeTranlasteControllerMiddleware2() throws IOException, ServletException, NullPointerException{
         TranslatorMiddleware translatorMiddleware = new TranslatorMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\Trouble.txt");

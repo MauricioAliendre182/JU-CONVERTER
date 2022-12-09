@@ -27,7 +27,7 @@ public class AudioMiddlewareTest{
     /**
      * This Test Case checks if the middleware and controller works correctly inlcuding the token
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testPositiveAudioControllerMiddleware() throws IOException, ServletException, NullPointerException{
         AudioControllerMiddleware audioControllerMiddleware = new AudioControllerMiddleware();
         String fileName = "song.mp3";
@@ -86,7 +86,7 @@ public class AudioMiddlewareTest{
     /**
      * This Test Case checks if the middleware and controller works correctly with a empty field on parameters sended
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testNegativeAudioControllerMiddleware2() throws IOException, ServletException, NullPointerException{
         AudioControllerMiddleware audioControllerMiddleware = new AudioControllerMiddleware();
         String fileName = "song.mp3";

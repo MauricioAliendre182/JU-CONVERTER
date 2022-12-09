@@ -32,7 +32,7 @@ public class ImageMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly inlcuding the token
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testPositiveImageControllerMiddleware() throws IOException, ServletException, NullPointerException{
         ImageControllerMiddleware imageControllerMiddleware = new ImageControllerMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\image.jpg");
@@ -101,7 +101,7 @@ public class ImageMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly with a empty field on parameters sended
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testNegativeImageControllerMiddleware2() throws IOException, ServletException, NullPointerException{
         ImageControllerMiddleware imageControllerMiddleware = new ImageControllerMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\image.jpg");

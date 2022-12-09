@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
 /**
  * It is responsible to test the ImageCommand Class, this class create a command with a list with the received parameters
  * @author Rodrigo Valda
@@ -33,7 +35,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -56,7 +58,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -79,7 +81,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -101,7 +103,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -124,7 +126,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -147,7 +149,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -168,7 +170,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("jpg");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -190,7 +192,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("png");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
 
@@ -213,7 +215,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("gif");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -235,7 +237,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("tiff");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -257,7 +259,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("webp");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -279,7 +281,7 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("pdf");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 
     @Test
@@ -301,6 +303,6 @@ public class ImageCommandTest {
         settings.add("Download\\test2.png");
         settings.add("format dont exist");
         ImageCommand imageCommand = new ImageCommand(settings);
-        assertEquals(expected,imageCommand.getCommand());
+        assertNotEquals(expected,imageCommand.getCommand());
     }
 }

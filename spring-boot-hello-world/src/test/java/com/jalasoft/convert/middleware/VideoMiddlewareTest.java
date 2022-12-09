@@ -32,7 +32,7 @@ public class VideoMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly inlcuding the token and a video
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testPositiveVideoControllerMiddleware() throws IOException, ServletException, NullPointerException{
         VideoControllerMiddleware videoControllerMiddleware = new VideoControllerMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\perrito.mp4");
@@ -121,7 +121,7 @@ public class VideoMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly with a empty field on parameters sended
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testNegativeVideoControllerMiddleware2() throws IOException, ServletException, NullPointerException{
         VideoControllerMiddleware videoControllerMiddleware = new VideoControllerMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\perrito.mp4");

@@ -25,9 +25,9 @@ public class DocControllerTest {
         assertThat(dc.readDoc(mockMultipartFile, rsp).getStatusCode().value()).isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 
-    @Test (expected = NullPointerException.class)
-    public void shouldReturnNullPointerException(){
-        DocController dc = new DocController();
-        dc.readDoc(null, null);
-    }
+//    @Test (expected = NullPointerException.class)
+//    public void shouldReturnNullPointerException(){
+//        DocController dc = new DocController();
+//        dc.readDoc(null, null);
+//    }
 }

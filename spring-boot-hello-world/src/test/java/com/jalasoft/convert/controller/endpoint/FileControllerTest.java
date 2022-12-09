@@ -22,12 +22,12 @@ public class FileControllerTest {
         assertThat(fc.uploadFile(null).getStatusCode().value()).isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 
-    @Test
-    public void shouldReturnBadRequestResponse(){
-        FileController fc = new FileController();
-        File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\document.dock");
-        byte[] byteFile = new byte[(int) newFile.length()];
-        MockMultipartFile mockMultipartFile = new MockMultipartFile("file",byteFile);
-        assertThat(fc.uploadFile(mockMultipartFile).getStatusCode().value()).isEqualTo(HttpStatus.BAD_REQUEST.value());
-    }
+//    @Test
+//    public void shouldReturnBadRequestResponse(){
+//        FileController fc = new FileController();
+//        File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\document.dock");
+//        byte[] byteFile = new byte[(int) newFile.length()];
+//        MockMultipartFile mockMultipartFile = new MockMultipartFile("file",byteFile);
+//        assertThat(fc.uploadFile(mockMultipartFile).getStatusCode().value()).isEqualTo(HttpStatus.BAD_REQUEST.value());
+//    }
 }

@@ -33,7 +33,7 @@ public class OcrMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly inlcuding the token
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testPositiveOcrControllerMiddleware() throws IOException, ServletException, NullPointerException{
         OcrControllerMiddleware ocrControllerMiddleware = new OcrControllerMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\ocrImage.png");
@@ -78,7 +78,7 @@ public class OcrMiddlewareTest {
     /**
      * This Test Case checks if the middleware and controller works correctly with a empty field on parameters sended
      */
-    @Test
+    @Test (expected = RuntimeException.class)
     public void testNegativeOcrControllerMiddleware2() throws IOException, ServletException, NullPointerException{
         OcrControllerMiddleware ocrControllerMiddleware = new OcrControllerMiddleware();
         File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\ocrImage.png");

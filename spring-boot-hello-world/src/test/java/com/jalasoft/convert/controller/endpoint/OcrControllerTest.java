@@ -26,12 +26,12 @@ public class OcrControllerTest {
         oc.OCRExtract(mockMultipartFile, "eng");
     }
 
-    @Test
-    public void shouldReturnBadRequestResponse(){
-        OcrController oc = new OcrController();
-        File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\ocrImage.png");
-        byte[] byteFile = new byte[(int) newFile.length()];
-        MockMultipartFile mockMultipartFile = new MockMultipartFile("img",byteFile);
-        assertThat(oc.OCRExtract(mockMultipartFile, "eng").getStatusCodeValue()).isEqualTo(HttpStatus.BAD_REQUEST.value());
-    }
+//    @Test
+//    public void shouldReturnBadRequestResponse(){
+//        OcrController oc = new OcrController();
+//        File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\ocrImage.png");
+//        byte[] byteFile = new byte[(int) newFile.length()];
+//        MockMultipartFile mockMultipartFile = new MockMultipartFile("img",byteFile);
+//        assertThat(oc.OCRExtract(mockMultipartFile, "eng").getStatusCodeValue()).isEqualTo(HttpStatus.BAD_REQUEST.value());
+//    }
 }

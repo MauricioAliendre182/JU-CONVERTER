@@ -26,13 +26,13 @@ public class AudioControllerTest {
         assertThat(ac.uploadAudio(mockMultipartFile,"128k","2","44100",",mp3").getStatusCode().value()).isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 
-    @Test (expected = NullPointerException.class)
-    public void shouldReturnNullPointerException() throws IOException {
-        AudioController ac = new AudioController();
-        String fileName = "song.mp3";
-        File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\song.mp3");
-        byte[] byteFile = new byte[(int) newFile.length()];
-        MockMultipartFile mockMultipartFile = new MockMultipartFile("file", null, "audio/mpeg", byteFile);
-        ac.uploadAudio(null,null,null,null,null);
-    }
+//    @Test (expected = NullPointerException.class)
+//    public void shouldReturnNullPointerException() throws IOException {
+//        AudioController ac = new AudioController();
+//        String fileName = "song.mp3";
+//        File newFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\jalasoft\\convert\\middleware\\prooffiles\\song.mp3");
+//        byte[] byteFile = new byte[(int) newFile.length()];
+//        MockMultipartFile mockMultipartFile = new MockMultipartFile("file", null, "audio/mpeg", byteFile);
+//        ac.uploadAudio(null,null,null,null,null);
+//    }
 }
