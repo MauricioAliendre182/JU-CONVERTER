@@ -23,9 +23,6 @@ pipeline {
                   }
               }
          }
-        stage ('SCM'){
-            git 'https://github.com/foo/bar.git'
-        }
         stage('Sonarqube') {
             steps {
                 dir('./spring-boot-hello-world') {
