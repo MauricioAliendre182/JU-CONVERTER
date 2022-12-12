@@ -23,10 +23,15 @@ pipeline {
                   }
               }
          }
+        stage ('SCM'){
+            git 'https://github.com/foo/bar.git'
+        }
         stage('Sonarqube') {
             steps {
                 dir('./spring-boot-hello-world') {
-                    sh './gradlew sonarqube'
+                     withSonarQubeEnv() { // Will pick the global server connection you have configured
+                          sh './gradlew sonarqube'
+                      }
                 }
             }
         }
