@@ -26,7 +26,8 @@ pipeline {
         stage('Sonarqube') {
             steps {
                 dir('./spring-boot-hello-world') {
-                     withSonarQubeEnv(installationName: 'Sonarqube server', credentialsId: 'SonarqubeJenkins') { // Will pick the global server connection you have configured
+                     withSonarQubeEnv(installationName: 'Sonarqube serverjen') { // Will pick the global server connection you have configured
+//                           , credentialsId: 'SonarqubeJenkins'
                           sh './gradlew sonarqube'
                       }
                 }
