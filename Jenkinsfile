@@ -27,10 +27,34 @@ pipeline {
             steps {
                 dir('./spring-boot-hello-world') {
                      sh './gradlew sonarqube'
-//                      withSonarQubeEnv(installationName: 'sonar', credentialsId: 'GradleTask') { // Will pick the global server connection you have configured
-//                           sh './gradlew sonarqube'
-//                       }
                 }
+            }
+        }
+        stage('Report') {
+            steps {
+                //allure includeProperties: false, jdk: '', results: [[path: 'allure-report']]
+                script {
+                    allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'allure-report']]
+                    ])
+                }
+            }
+        }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('Upload') {
+            steps {
+                sh './gradlew publish --console verbose'
             }
         }
     }
