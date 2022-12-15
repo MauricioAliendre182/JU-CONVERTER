@@ -33,6 +33,7 @@ pipeline {
         stage('Report') {
             steps {
                 //allure includeProperties: false, jdk: '', results: [[path: 'allure-report']]
+              dir('./spring-boot-hello-world') {
                 script {
                     allure([
                             includeProperties: false,
@@ -41,20 +42,25 @@ pipeline {
                             reportBuildPolicy: 'ALWAYS',
                             results: [[path: 'allure-report']]
                     ])
-                }
-            }
+                 }
+              }
+           }
         }
         stage("Quality Gate") {
             steps {
+              dir('./spring-boot-hello-world'){
                 timeout(time: 2, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
-            }
+             }
+          }
         }
 
         stage('Upload') {
             steps {
-                sh './gradlew publish --console verbose'
+                dir('./spring-boot-hello-world'){
+                    sh './gradlew publish --console verbose'
+                }
             }
         }
     }
