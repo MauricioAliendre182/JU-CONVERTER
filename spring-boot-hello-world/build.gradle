@@ -78,7 +78,7 @@ publishing {
 	repositories {
 		maven {
 //			name 'nexus'
-			url "http://10.0.2.15/nexus/content/repositories/snapshots/"
+			url "http://10.0.2.15:8081/nexus/content/repositories/snapshots/"
 			allowInsecureProtocol true
 			credentials {
 				username "admin"
