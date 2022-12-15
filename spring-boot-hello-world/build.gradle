@@ -2,8 +2,11 @@ plugins {
 	id 'org.springframework.boot' version '2.7.4'
 	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
+	id 'java-library'
 	id 'jacoco'
+	id 'maven-publish'
 	id 'org.sonarqube' version '3.4.0.2513'
+	id 'io.qameta.allure' version '2.11.2'
 }
 
 bootJar {
@@ -62,5 +65,28 @@ test {
 		includeTestsMatching("com.jalasoft.convert.*")
 	}
 }
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			artifact("build/libs/spring-boot-hello-world-0.0.1-SNAPSHOT-plain" + ".jar") {
+				extension 'jar'
+			}
+		}
+	}
+
+	repositories {
+		maven {
+//			name 'nexus'
+			url "http://localhost:8081/nexus/content/repositories/Snapshots123/"
+			allowInsecureProtocol true
+			credentials {
+				username "admin"
+				password "admin123"
+			}
+		}
+	}
+}
+
 
 test.finalizedBy("jacocoTestReport")
