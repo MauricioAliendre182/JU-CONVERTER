@@ -30,22 +30,22 @@ pipeline {
                 }
             }
         }
-        stage('Report') {
-            steps {
-                //allure includeProperties: false, jdk: '', results: [[path: 'allure-report']]
-              dir('./spring-boot-hello-world') {
-                script {
-                    allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'allure-report']]
-                    ])
-                 }
-              }
-           }
-        }
+//         stage('Report') {
+//             steps {
+//                 //allure includeProperties: false, jdk: '', results: [[path: 'allure-report']]
+//               dir('./spring-boot-hello-world') {
+//                 script {
+//                     allure([
+//                             includeProperties: false,
+//                             jdk: '',
+//                             properties: [],
+//                             reportBuildPolicy: 'ALWAYS',
+//                             results: [[path: 'allure-report']]
+//                     ])
+//                  }
+//               }
+//            }
+//         }
         stage("Quality Gate") {
             steps {
               dir('./spring-boot-hello-world'){
