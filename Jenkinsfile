@@ -46,15 +46,15 @@ pipeline {
 //               }
 //            }
 //         }
-        stage("Quality Gate") {
-            steps {
-              dir('./spring-boot-hello-world'){
-                timeout(time: 2, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
-             }
-          }
-        }
+//         stage("Quality Gate") {
+//             steps {
+//               dir('./spring-boot-hello-world'){
+//                 timeout(time: 2, unit: 'MINUTES') {
+//                     waitForQualityGate abortPipeline: true
+//                 }
+//              }
+//           }
+//         }
 
         stage('Upload') {
             steps {
